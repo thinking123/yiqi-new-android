@@ -374,6 +374,10 @@ public class PayActivity extends BaseSupportActivity<OrderPresenter> implements 
            info = msg+",请前往认证中心认证月结资质认证.";
            }
 
+
+//        if (status.equalsIgnoreCase("6001")) {
+//
+//        }
         new MaterialDialog.Builder(PayActivity.this)
                 .content(info)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
@@ -381,8 +385,11 @@ public class PayActivity extends BaseSupportActivity<OrderPresenter> implements 
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         Log.i("month log" , "go to month");
 
-                        Intent intent = new Intent(PayActivity.this, MonthAuthActivity.class);
-                        startActivity(intent);
+                        if (status.equalsIgnoreCase("7001")){
+                            Intent intent = new Intent(PayActivity.this, MonthAuthActivity.class);
+                            startActivity(intent);
+                        }
+
 
                     }
                 })
