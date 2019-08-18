@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.alipay.sdk.app.AuthTask;
 import com.eshop.R;
@@ -37,6 +39,7 @@ import com.eshop.mvp.http.entity.order.Order;
 import com.eshop.mvp.http.entity.order.PayRet;
 import com.eshop.mvp.http.entity.ship.AddressBean;
 import com.eshop.mvp.presenter.OrderPresenter;
+import com.eshop.mvp.ui.activity.store.MonthAuthActivity;
 import com.eshop.mvp.ui.fragment.OrderFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -47,6 +50,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -372,6 +376,16 @@ public class PayActivity extends BaseSupportActivity<OrderPresenter> implements 
 
         new MaterialDialog.Builder(PayActivity.this)
                 .content(info)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        Log.i("month log" , "go to month");
+
+                        Intent intent = new Intent(PayActivity.this, MonthAuthActivity.class);
+                        startActivity(intent);
+
+                    }
+                })
                 .backgroundColorRes(R.color.white)
                 .contentColorRes(R.color.color_3333)
                 .positiveText("确定")

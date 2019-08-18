@@ -12,13 +12,13 @@ android {
     signingConfigs {
         release {
             keyPassword '123456789a'
-            storeFile file('../shop.jks')
+            storeFile file('/u盘数据/bark/android/android_keystore/yiqi-shop/shop.jks')
             storePassword '123456789a'
             keyAlias 'key0'
         }
         debug {
             keyPassword '123456789a'
-            storeFile file('../shop.jks')
+            storeFile file('/u盘数据/bark/android/android_keystore/yiqi-shop/shop.jks')
             storePassword '123456789a'
             keyAlias 'key0'
         }
