@@ -417,7 +417,7 @@ public class PayActivity extends BaseSupportActivity<OrderPresenter> implements 
 
         wxApi.sendReq(req);
 
-        finish();
+//        finish();
     }
 
     @Override

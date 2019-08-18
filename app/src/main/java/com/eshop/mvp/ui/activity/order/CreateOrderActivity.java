@@ -568,7 +568,7 @@ public class CreateOrderActivity extends BaseSupportActivity<CreateOrderPresente
         // Intent intent1 = new Intent(this, OrderActivity.class);
         // startActivity(intent1);
         // }
-        finish();
+//        finish();
     }
 
     @Override
@@ -592,7 +592,7 @@ public class CreateOrderActivity extends BaseSupportActivity<CreateOrderPresente
             intent.putExtra("appClassId", appClassId);
             startActivity(intent);
 
-            finish();
+//            finish();
         }else{
              Intent intent1 = new Intent(this, OrderActivity.class);
              startActivity(intent1);
