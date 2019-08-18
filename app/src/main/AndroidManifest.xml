@@ -35,6 +35,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="theme,android:icon">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.eshop.myprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity android:name=".mvp.ui.activity.EaseChatActivity"></activity>
         <!-- 环信SDK配置 start -->
         <!-- 设置环信应用的AppKey -->

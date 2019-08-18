@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.v4.BuildConfig;
 import android.support.v4.content.FileProvider;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -55,8 +56,23 @@ public class EaseCompat {
     }
 
     public static Uri getUriForFile(Context context, File file) {
+//        Uri contentUri = FileProvider.getUriForFile(
+//                context,
+//                "com.eshop.myprovider",
+//                file);
+//
+//        return contentUri;
+
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return FileProvider.getUriForFile(context, context.getPackageName() + ".fileProvider", file);
+            Uri contentUri = FileProvider.getUriForFile(
+                    context,
+                    "com.eshop.myprovider",
+                    file);
+
+            return contentUri;
+//            return FileProvider.getUriForFile(context, context.getPackageName() + ".fileProvider", file);
         } else {
             return Uri.fromFile(file);
         }
