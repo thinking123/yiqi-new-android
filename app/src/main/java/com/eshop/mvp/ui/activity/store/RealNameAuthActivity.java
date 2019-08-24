@@ -49,6 +49,7 @@ import com.eshop.mvp.ui.activity.login.UserInfoActivity;
 import com.eshop.mvp.ui.widget.AdDialog;
 import com.eshop.mvp.ui.widget.ExampleDialog;
 import com.eshop.mvp.utils.PicChooserHelper;
+import com.eshop.mvp.utils.Util;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
@@ -298,8 +299,8 @@ public class RealNameAuthActivity extends BaseSupportActivity<StoreManagerPresen
             return false;
         }
 
-        if(edit_cardid.getText().toString().isEmpty()){
-            showMessage("请输入身份证号.");
+        if(!Util.isValidID(edit_cardid.getText().toString())){
+            showMessage("请输入正确的身份证号.");
             return false;
         }
         if(BaseApp.authInfo==null || BaseApp.authInfo.getIdCardHeadImg()==null || BaseApp.authInfo.getIdCardIMg()==null){

@@ -27,6 +27,7 @@ import com.eshop.mvp.http.entity.store.Auth;
 import com.eshop.mvp.http.entity.store.AuthInfo;
 import com.eshop.mvp.ui.widget.ExampleDialog;
 import com.eshop.mvp.utils.PicChooserHelper;
+import com.eshop.mvp.utils.Util;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -269,13 +270,12 @@ public class MonthAuthActivity extends BaseSupportActivity<MonthAuthPresenter> i
             return false;
         }
 
-        if(edit_phone.getText().toString().isEmpty()){
-            showMessage("请输入手机号.");
+        if(!Util.isMobileNO(edit_phone.getText().toString())){
+            showMessage("请输入正确的手机号.");
             return false;
         }
-
-        if(edit_cardid.getText().toString().isEmpty()){
-            showMessage("请输入法人身份证号.");
+        if(!Util.isValidID(edit_cardid.getText().toString())){
+            showMessage("请输入正确的法人身份证号.");
             return false;
         }
         if(BaseApp.monthData==null || BaseApp.monthData.getIdCardHeadImg()==null || BaseApp.monthData.getIdCardIMg()==null){
