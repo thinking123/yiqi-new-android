@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
+
+import timber.log.Timber;
 
 public class ChatFragment extends EaseChatFragment implements EaseChatFragment.EaseChatFragmentHelper {
 
@@ -240,6 +243,17 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
                         String videoPath = data.getStringExtra("path");
                         File file = new File(PathUtil.getInstance().getImagePath(), "thvideo" + System.currentTimeMillis());
                         try {
+                            File videoFile = new File(videoPath);
+                            int file_size = Integer.parseInt(String.valueOf(videoFile.length()/(1024 * 1024)));
+
+                            Timber.i("video file size : %d M" , file_size);
+                            if(file_size >= 10){
+                                Toast.makeText(getContext() ,
+                                        "发送的视频不能超过 10 M" ,
+                                        Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+//                            Log.i("video file size"  , file_size);
                             FileOutputStream fos = new FileOutputStream(file);
                             Bitmap ThumbBitmap = ThumbnailUtils.createVideoThumbnail(videoPath, 3);
                             ThumbBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
