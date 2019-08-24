@@ -247,131 +247,167 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView18" />
 
-    <ImageView
-        android:id="@+id/daifu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/daifa"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+    <LinearLayout
+        android:id="@+id/imageBtnWrap"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_height="75dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:srcCompat="@drawable/daifukuai" />
-
-    <ImageView
-        android:id="@+id/daifa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/daishou"
-        app:layout_constraintStart_toEndOf="@+id/daifu"
-        app:layout_constraintTop_toTopOf="@+id/daifu"
-        app:srcCompat="@drawable/daifahuo" />
-
-    <ImageView
-        android:id="@+id/daishou"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/wancheng"
-        app:layout_constraintStart_toEndOf="@+id/daifa"
-        app:layout_constraintTop_toTopOf="@+id/daifa"
-        app:srcCompat="@drawable/daishouhuo" />
-
-    <ImageView
-        android:id="@+id/wancheng"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/daishou_txt"
-        app:layout_constraintEnd_toStartOf="@+id/tuikuan"
-        app:layout_constraintStart_toEndOf="@+id/daishou"
-        app:layout_constraintTop_toTopOf="@+id/daishou"
-        app:srcCompat="@drawable/yiwancheng" />
-
-    <ImageView
-        android:id="@+id/tuikuan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/wancheng"
-        app:layout_constraintTop_toTopOf="@+id/wancheng"
-        app:srcCompat="@drawable/tuikuan" />
-
-    <TextView
-        android:id="@+id/daifu_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="待付款"
-        android:textColor="@color/color_4e4e"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/daifu"
-        app:layout_constraintStart_toStartOf="@+id/daifu"
-        app:layout_constraintTop_toBottomOf="@+id/daifu" />
-
-    <TextView
-        android:id="@+id/daifa_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="待发货"
-        android:textColor="@color/color_4e4e"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/daifa"
-        app:layout_constraintStart_toStartOf="@+id/daifa"
-        app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
-
-    <TextView
-        android:id="@+id/daishou_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="待收货"
-        android:textColor="@color/color_4e4e"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/daishou"
-        app:layout_constraintStart_toStartOf="@+id/daishou"
-        app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
-
-    <TextView
-        android:id="@+id/yiwancheng_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="已完成"
-        android:textColor="@color/color_4e4e"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/wancheng"
-        app:layout_constraintStart_toStartOf="@+id/wancheng"
-        app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
-
-    <TextView
-        android:id="@+id/tuikuan_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="退款/售后"
-        android:textColor="@color/color_4e4e"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tuikuan"
-        app:layout_constraintStart_toStartOf="@+id/tuikuan"
-        app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
-
+        >
+        <LinearLayout
+            android:id="@+id/imageBtn1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/daifu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/daifukuai" />
+            <TextView
+                android:id="@+id/daifu_txt"
+                android:layout_width="wrap_content"
+                android:clickable="false"
+                android:layout_height="wrap_content"
+                android:text="待付款"
+                android:textColor="@color/color_4e4e"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/imageBtn2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/daifa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@drawable/daifahuo" />
+            <TextView
+                android:id="@+id/daifa_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待发货"
+                android:textColor="@color/color_4e4e"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/imageBtn3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/daishou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/wancheng"
+                app:layout_constraintStart_toEndOf="@+id/daifa"
+                app:layout_constraintTop_toTopOf="@+id/daifa"
+                app:srcCompat="@drawable/daishouhuo" />
+            <TextView
+                android:id="@+id/daishou_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待收货"
+                android:textColor="@color/color_4e4e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/daishou"
+                app:layout_constraintStart_toStartOf="@+id/daishou"
+                app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/imageBtn4"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/wancheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/daishou_txt"
+                app:layout_constraintEnd_toStartOf="@+id/tuikuan"
+                app:layout_constraintStart_toEndOf="@+id/daishou"
+                app:layout_constraintTop_toTopOf="@+id/daishou"
+                app:srcCompat="@drawable/yiwancheng" />
+            <TextView
+                android:id="@+id/yiwancheng_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已完成"
+                android:textColor="@color/color_4e4e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/wancheng"
+                app:layout_constraintStart_toStartOf="@+id/wancheng"
+                app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/imageBtn5"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/tuikuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/wancheng"
+                app:layout_constraintTop_toTopOf="@+id/wancheng"
+                app:srcCompat="@drawable/tuikuan" />
+            <TextView
+                android:id="@+id/tuikuan_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="退款/售后"
+                android:textColor="@color/color_4e4e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tuikuan"
+                app:layout_constraintStart_toStartOf="@+id/tuikuan"
+                app:layout_constraintTop_toTopOf="@+id/daifu_txt" />
+        </LinearLayout>
+    </LinearLayout>
     <TextView
         android:id="@+id/line1"
         android:layout_width="0dp"
         android:layout_height="6dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="5dp"
         android:background="@color/color_d7d7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daifu_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/imageBtnWrap" />
 
     <ImageView
         android:id="@+id/wodedianpu"

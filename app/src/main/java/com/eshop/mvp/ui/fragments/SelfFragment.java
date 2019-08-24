@@ -190,14 +190,22 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
     }
 
-    @OnClick({R.id.iv_header, R.id.set, R.id.all, R.id.daifu, R.id.daifa,
-            R.id.daishou, R.id.wancheng, R.id.tuikuan,
+    @OnClick({R.id.iv_header, R.id.set, R.id.all,
+//            R.id.daifu, R.id.daifa,
+//            R.id.daishou, R.id.wancheng, R.id.tuikuan,
             R.id.mystore,
             R.id.store_mgr,
             R.id.real_name,
             R.id.textView12,
             R.id.help, R.id.shoucang,
-            R.id.hetong})
+            R.id.hetong,
+//            R.id.daifu_txt,R.id.daifa_txt,
+//            R.id.daishou_txt,R.id.yiwancheng_txt,
+//            R.id.tuikuan_txt,
+            R.id.imageBtn1,  R.id.imageBtn2,
+            R.id.imageBtn3,  R.id.imageBtn4,
+            R.id.imageBtn5,
+    })
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.mystore:
@@ -218,7 +226,8 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
                     LoginUtils.login(getActivity());
                 }
                 break;
-            case R.id.tuikuan:
+//            case R.id.tuikuan:
+            case R.id.imageBtn5:
                 if (LoginUtils.isLogin(getActivity())) {
                     Intent intent7 = new Intent(getActivity(), AfterSaleActivity.class);
                     startActivity(intent7);
@@ -273,7 +282,8 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 break;
 
-            case R.id.daifu:
+//            case R.id.daifu:
+            case R.id.imageBtn1:
                 if (LoginUtils.isLogin(getActivity())) {
                     Intent intent_d = new Intent(getActivity(), OrderActivity.class);
                     intent_d.putExtra("position", 1);
@@ -284,7 +294,8 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 break;
 
-            case R.id.daifa:
+//            case R.id.daifa:
+            case R.id.imageBtn2:
                 if (LoginUtils.isLogin(getActivity())) {
                     Intent intent_a = new Intent(getActivity(), OrderActivity.class);
                     intent_a.putExtra("position", 2);
@@ -295,7 +306,8 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 break;
 
-            case R.id.daishou:
+//            case R.id.daishou:
+            case R.id.imageBtn3:
                 if (LoginUtils.isLogin(getActivity())) {
                     Intent intent_s = new Intent(getActivity(), OrderActivity.class);
                     intent_s.putExtra("position", 3);
@@ -306,7 +318,8 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 break;
 
-            case R.id.wancheng:
+//            case R.id.wancheng:
+            case R.id.imageBtn4:
                 if (LoginUtils.isLogin(getActivity())) {
                     Intent intent_w = new Intent(getActivity(), OrderActivity.class);
                     intent_w.putExtra("position", 4);
