@@ -161,6 +161,13 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
             dianpuguanli_txt.setVisibility(View.GONE);
             line3.setVisibility(View.GONE);
         }
+
+        if(storeStatus == null){
+            if (mPresenter != null && BaseApp.loginBean != null){
+                mPresenter.getCollectionNum(BaseApp.loginBean.getToken());
+                mPresenter.state(BaseApp.loginBean.getToken());
+            }
+        }
     }
 
     private void setData() {
@@ -212,6 +219,9 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 if (LoginUtils.isLogin(getActivity())) {
 
+                    if(storeStatus==null){
+                        return;
+                    }
                     if (storeStatus==null || storeStatus.equalsIgnoreCase("6003")) {
                         String storeId = BaseApp.loginBean.getStoreId() + "";
                         Intent intent = new Intent(getActivity(), StoreActivity.class);
@@ -334,6 +344,9 @@ public class SelfFragment extends BaseSupportFragment<SelfPresenter> implements 
 
                 if (LoginUtils.isLogin(getActivity())) {
 
+                    if(storeStatus==null){
+                        return;
+                    }
                     if (storeStatus==null || storeStatus.equalsIgnoreCase("6003")) {
                         Intent intent2 = new Intent(getActivity(), StoreManagerActivity.class);
                         startActivity(intent2);
