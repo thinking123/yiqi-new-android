@@ -23,4 +23,6 @@
     <dimen name="recall_dimen_256">256dp</dimen>
     <dimen name="recall_size_12">12sp</dimen>
     <dimen name="recall_size_8">8sp</dimen>
+     <dimen name="list_msg_img_width">120dp</dimen>
+     <dimen name="list_msg_img_height">180dp</dimen>
 </resources>
