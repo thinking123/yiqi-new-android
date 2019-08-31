@@ -60,6 +60,7 @@ import com.eshop.mvp.utils.PicChooserHelper;
 import com.google.gson.Gson;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.zkteam.discover.util.TextUtil;
 
 import org.angmarch.views.NiceSpinner;
 import org.angmarch.views.SimpleSpinnerTextFormatter;
@@ -596,6 +597,18 @@ public class StoreInfoActivity extends BaseSupportActivity<StoreManagerPresenter
          }
 
          if(BaseApp.authInfo==null)BaseApp.authInfo = new AuthInfo();
+
+         AuthInfo f = BaseApp.authInfo;
+
+         if(TextUtil.isEmptyTrim(f.getBackground())){
+             showMessage("上传店铺背景图");
+             return  false;
+         }
+
+        if(TextUtil.isEmptyTrim(f.getStoreImg())){
+            showMessage("上传店铺头像");
+            return  false;
+        }
 
          BaseApp.authInfo.setStreoName(edit_name.getText().toString());
          BaseApp.authInfo.setDetailsAddress(edit_address.getText().toString());
